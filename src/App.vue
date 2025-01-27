@@ -1,85 +1,116 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div id="app">
+    <header>
+      <h1>CF - Controle Fácil</h1>
+      <a href="">Inicio</a>
+      <a href="">Funcionalidades</a>
+      <a href="">Preços</a>
+      <button @click="requestDemo">Solicitar Demonstração ✨</button>
+    </header>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <section class="features">
+      <h2>Funcionalidades</h2>
+      <ul>
+        <li>Gestão de Estoque</li>
+        <li>Controle Financeiro</li>
+        <li>Vendas e Compras</li>
+        <li>Relatórios Avançados</li>
+      </ul>
+    </section>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+    <section class="benefits">
+      <h2>Benefícios</h2>
+      <p>Aumente a produtividade e tome decisões mais informadas.</p>
+      <p>Transforme seu processo de gestão com uma interface intuitiva.</p>
+    </section>
 
-  <RouterView />
+    <footer>
+      <p>Entre em contato conosco: contato@erp.com</p>
+    </footer>
+  </div>
 </template>
 
+<script>
+export default {
+  methods: {
+    requestDemo() {
+      alert('Solicitação de demonstração enviada!');
+    },
+  },
+};
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+#app {
   text-align: center;
-  margin-top: 2rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+div header {
+  background-color: #10403B;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+header button {
+  height: 3rem;
+  padding: 10px 20px;
+  border-radius: 12px; 
+  border: none;
+  cursor: pointer;
+  background-color: #0c2b26; 
+  color: rgb(130, 212, 22);
+  font-size: 1.1em; 
+  font-weight: bold; 
+  transition: background-color 0.3s, transform 0.3s ease;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+header button:hover {
+  background-color: rgb(128, 156, 24);
+  color: rgb(26, 41, 7);
 }
 
-nav a:first-of-type {
-  border: 0;
+div header a{
+  background-color: #127369;
+  color:#f0f0f0 ;
+  padding: 6px;
+  border-radius: 8px;
+  text-decoration: none;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+div header a:hover{
+  background-color: #326927;
+  padding: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: .4s;
+}
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+header h1 {
+  font-size: 3em;
+}
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.features,
+.benefits {
+  margin-top: 40px;
+}
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+ul {
+  list-style-type: none;
+}
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+footer {
+  margin-top: 50px;
+  background-color: #f1f1f1;
+  padding: 10px;
 }
 </style>
